@@ -20,12 +20,12 @@ async function afficherEffectifsParDepartement() {
 	{
 		return departement.effectif_total_filles;
   }
-  function getNomDepartement(departement)
+  function getNomCommune(departement)
   {
-    return departement.libelle_departement;
+    return departement.libelle_commune;
   }
-	//extraire nom departements, effectifs garcons et effectifs filles
-  const tableauDepartements = dixDepartements.map(getNomDepartement);
+	//extraire nom commune, effectifs garcons et effectifs filles
+  const tableauCommunes = dixDepartements.map(getNomCommune);
   const tableauGarcons = dixDepartements.map(getGarcons);
 	const tableauFilles = dixDepartements.map(getFilles);
   
@@ -35,7 +35,7 @@ async function afficherEffectifsParDepartement() {
 		{
 		type: 'line',
 		data: {
-		  labels: tableauDepartements,
+		  labels: tableauCommunes,
 		  datasets: [{
 			label: 'effectifs garçons',
 			data: tableauGarcons,
